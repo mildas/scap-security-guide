@@ -13,7 +13,7 @@ readarray -t FILES_WITH_INCORRECT_PERMS < <(rpm -Va --nofiledigest | awk '{ if (
 
 for FILE_PATH in "${FILES_WITH_INCORRECT_PERMS[@]}"
 do
-	RPM_PACKAGE=$(rpm -qf "$FILE_PATH")
+	RPM_PACKAGE=$(rpm -qfa "$FILE_PATH")
 	# Use an associative array to store packages as it's keys, not having to care about duplicates.
 	SETPERMS_RPM_DICT["$RPM_PACKAGE"]=1
 done
