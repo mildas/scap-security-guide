@@ -4,14 +4,8 @@
 # complexity = low
 # disruption = high
 
-{{% if MOUNT_HAS_TO_EXIST == "no" %}}
-   {{% set TABFILE="" %}}
-{{% else %}}
-   {{% set TABFILE="--fstab" %}}
-{{% endif %}}
-
 - name: Check information associated to mountpoint
-  command: findmnt {{{ TABFILE }}} '{{{ MOUNTPOINT }}}'
+  command: findmnt --fstab '{{{ MOUNTPOINT }}}'
   register: device_name
   failed_when: device_name.rc > 1
   changed_when: False
