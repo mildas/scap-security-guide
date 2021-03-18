@@ -4,7 +4,7 @@ prodtype: rhcos4,ol7,ol8,rhel7,rhel8,rhv4,sle15
 
 title: 'Configure Accepting Router Advertisements on All IPv6 Interfaces'
 
-description: '{{{ describe_sysctl_option_value(sysctl="net.ipv6.conf.all.accept_ra", value="0") }}}'
+description: '{{{ describe_sysctl_option_value(sysctl="net.ipv6.conf.all.accept_ra", value="1") }}}'
 
 rationale: 'An illicit router advertisement message could result in a man-in-the-middle attack.'
 
@@ -30,7 +30,7 @@ references:
     cis@sle15: 3.3.9
     stigid@rhel8: RHEL-08-040261
 
-{{{ complete_ocil_entry_sysctl_option_value(sysctl="net.ipv6.conf.all.accept_ra", value="0") }}}
+{{{ complete_ocil_entry_sysctl_option_value(sysctl="net.ipv6.conf.all.accept_ra", value="1") }}}
 
 platform: machine
 
