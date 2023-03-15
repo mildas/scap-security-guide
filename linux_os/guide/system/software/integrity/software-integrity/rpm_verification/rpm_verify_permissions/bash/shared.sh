@@ -5,7 +5,7 @@
 # disruption = medium
 
 # Declare array to hold set of RPM packages we need to correct permissions for
-declare -A SETPERMS_RPM_DICT
+declare -A SETPERMS_RPM_DICTxxx
 
 # Create a list of files on the system having permissions different from what
 # is expected by the RPM database
