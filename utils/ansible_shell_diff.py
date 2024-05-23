@@ -3,6 +3,7 @@
 import yaml
 import argparse
 import subprocess
+from pathlib import Path
 
 
 def parse_args():
@@ -52,5 +53,8 @@ if __name__ == '__main__':
 
     diff = set(new_shell_modules) - set(old_shell_modules)
     if diff:
-        print("Changes in Ansible shell module have been found.")
+        print(f"Changes in Ansible shell module have been found:\n{'\n'.join(diff)}")
+
+    Path.unlink('old.yml')
+    Path.unlink('new.yml')
     exit(0)
