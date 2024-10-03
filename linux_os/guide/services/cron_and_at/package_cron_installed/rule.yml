@@ -1,9 +1,3 @@
-{{% if product in ["sle12", "sle15"] %}}
-{{% set package_name = "cronie" %}}
-{{% else %}}
-{{% set package_name = "cron" %}}
-{{% endif %}}
-
 documentation_complete: true
 
 title: 'Install the cron service'
@@ -36,11 +30,9 @@ references:
 ocil_clause: 'the package is installed'
 
 ocil: |-
-    {{{ ocil_package(package_name) }}}
+    {{{ ocil_package(package="cronie") }}}
 
 template:
     name: package_installed
     vars:
-        pkgname: cron
-        pkgname@sle12: cronie
-        pkgname@sle15: cronie
+        pkgname: cronie
